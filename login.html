@@ -1,0 +1,33 @@
+{% extends 'web/layouts/main.html' %}
+{% block title %}
+Register Page
+{% endblock title %}
+{% block content %}
+<div class="container" style="margin-top: 70px; min-height: 600px;">
+    <h4 class="mb-3">User Login</h4>
+    <hr style="border-color: #b8bfc2;">
+    {% include 'web/inc/message.html' %}
+
+    <section class="py-4 my-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <!-- Ensure the form is well-structured -->
+                    <form method="POST" action="">
+                        {% csrf_token %}
+                        <div class="mb-4">
+                            <label for="username" class="form-label">User Name</label>
+                            <input type="text" name="username" id="username" class="form-control" placeholder="Enter User Name">
+                        </div>
+                        <div class="mb-4"> 
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock content %}
